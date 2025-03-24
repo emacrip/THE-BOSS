@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to The Boss</title>
+    <style>
+        /* Basic styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            color: #fff;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #ff00cc, #3333ff, #00ffcc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: cambioColor 5s infinite alternate, moverTexto 3s infinite ease-in-out;
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+            border-radius: 15px;
+            border: 5px solid #fff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            animation: flotar 4s infinite ease-in-out;
+            margin-bottom: 20px;
+        }
+
+        .descripcion {
+            font-size: 1.5rem;
+            text-align: center;
+            max-width: 800px;
+            animation: aparecer 2s ease-in-out;
+            margin-bottom: 20px;
+        }
+
+        .destacado {
+            color: #ff00cc;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .frase {
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #ff00cc, #3333ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: cambioColor 5s infinite alternate;
+            margin-bottom: 10px;
+        }
+
+        .roadmap {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #ff00cc;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: left;
+        }
+
+        .roadmap h2 {
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #ff00cc, #3333ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .phase-title {
+            font-size: 1.5rem;
+            color: #00ffcc;
+            margin: 20px 0 10px;
+            text-transform: uppercase;
+        }
+
+        .roadmap ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .roadmap ul li {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .roadmap ul li::before {
+            content: '🔥';
+            position: absolute;
+            left: 0;
+            color: #ff00cc;
+        }
+
+        .boton {
+            background: linear-gradient(90deg, #ff00cc, #3333ff);
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(255, 0, 204, 0.7);
+            animation: brilloBoton 2s infinite alternate;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 10px;
+            text-decoration: none;
+        }
+
+        .boton:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 0, 204, 1);
+        }
+
+        /* Animations */
+        @keyframes cambioColor {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        @keyframes moverTexto {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(50px); }
+            100% { transform: translateX(0); }
+        }
+
+        @keyframes flotar {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes aparecer {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes brilloBoton {
+            0% { box-shadow: 0 0 20px rgba(255, 0, 204, 0.7); }
+            50% { box-shadow: 0 0 30px rgba(255, 0, 204, 1); }
+            100% { box-shadow: 0 0 20px rgba(255, 0, 204, 0.7); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .descripcion, .roadmap ul li { font-size: 1rem; }
+            .roadmap h2 { font-size: 1.8rem; }
+            .phase-title { font-size: 1.2rem; }
+        }
